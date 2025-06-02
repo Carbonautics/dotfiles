@@ -46,7 +46,7 @@ case "$1" in
     ;;
   status)
     if is_mute; then
-      echo ""
+      echo "(muted)"
     else
       vol=$(get_volume)
       echo "$vol%"
