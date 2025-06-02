@@ -17,7 +17,7 @@ limit=$((100 - inc))
 maxlimit=$((maxvol - inc))
 
 reloadSink() {
-    active_sink=$(pacmd list-sinks | awk '/* index:/{print $3}')
+    active_sink=$(pacmd list-sinks | awk '/\* index:/{print $3}')
 }
 
 function volUp {
@@ -150,9 +150,15 @@ function output() {
     volMuteStatus
     if [ "${curStatus}" = 'yes' ]
     then
-        echo " $curVol%"
+        echo "ﱝ mute"
     else
-        echo " $curVol%"
+        if [ $curVol -gt 70 ]; then
+            echo "$curVol%"
+        elif [ $curVol -gt 30 ]; then
+          echo "$curVol%"
+        else
+          echo "$curVol%"
+        fi
     fi
 } #}}}
 

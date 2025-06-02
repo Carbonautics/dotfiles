@@ -11,7 +11,7 @@ WIRELESS=$(ls /sys/class/net/ | grep '^wl' | head -n 1)
 
 # Launch polybar for each monitor
 for m in $(polybar --list-monitors | cut -d":" -f1); do
-  MONITOR="$m" WIRELESS="$WIRELESS" polybar --reload mainbar-i3 &
+  MONITOR="$m" WIRELESS="$WIRELESS" polybar --reload &
 done
 
 echo "Bars launched..."
