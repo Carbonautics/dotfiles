@@ -1,0 +1,1 @@
+/home/carbonautics/Carb/dotfiles/scripts/toggle_monitor_modes.sh
